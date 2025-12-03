@@ -101,4 +101,4 @@ Currently only `npm test` (placeholder). Use `npx tsx src/db/index.ts` or add a 
 - The client fetch URLs are hard-coded to `http://localhost:5000`; adjust or proxy if you deploy elsewhere.
 - To inspect current vulnerabilities run `npm audit` within each package (`client` and `server`).
 
-Happy hacking! :seedling:
+
