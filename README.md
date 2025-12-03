@@ -35,35 +35,3 @@ asset-manager-app/
        ├─ index.ts  # API entry point
        └─ schema.ts # Drizzle schema definition
 ```
-
-
-## Available npm Scripts
-
-### Client (`client/package.json`)
-- `npm run dev` – start Vite in development mode.
-- `npm run build` – type-check and build the production bundle.
-- `npm run preview` – preview the production build locally.
-- `npm run lint` – run ESLint.
-
-### Server (`server/package.json`)
-Currently only `npm test` (placeholder). Use `npx tsx src/db/index.ts` or add a `dev` script such as:
-```json
-"scripts": {
-  "dev": "tsx src/db/index.ts"
-}
-```
-
-## API Endpoints
-(All prefixed with `http://localhost:5000/api` by default.)
-- `GET /assets` – list all assets.
-- `GET /assets/:id` – fetch a single asset.
-- `POST /assets` – create a new asset (expects `itemType`, `serialNumber`, `status`, `purchaseDate`).
-- `PUT /assets/:id` – update an existing asset.
-- `DELETE /assets/:id` – remove an asset.
-
-## Notes & Tips
-- If `npm run dev` fails in the server folder, define the script as shown above or run `npx tsx ...` directly.
-- The client fetch URLs are hard-coded to `http://localhost:5000`; adjust or proxy if you deploy elsewhere.
-- To inspect current vulnerabilities run `npm audit` within each package (`client` and `server`).
-
-
