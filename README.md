@@ -36,41 +36,6 @@ asset-manager-app/
        └─ schema.ts # Drizzle schema definition
 ```
 
-## Getting Started
-
-### 1. Clone & install
-```bash
-# inside your workspace
-npm install # optional: runs at repo root if you have shared deps
-
-cd client
-npm install
-
-cd ../server
-npm install
-```
-
-### 2. Configure environment
-Create `server/.env` with at least:
-```
-DATABASE_URL=postgres://username:password@host:5432/asset_db
-PORT=5000 # optional (defaults to 5000)
-```
-Ensure the referenced database exists. Apply your schema/migrations (e.g., via `drizzle-kit push` if you have it configured) before starting the API.
-
-### 3. Run the backend
-```bash
-cd server
-npx tsx src/db/index.ts
-```
-This starts the Express server on `http://localhost:5000` and exposes the `/api/assets` endpoints.
-
-### 4. Run the frontend
-```bash
-cd client
-npm run dev
-```
-Open the Vite dev server URL it prints (usually `http://localhost:5173`). The client expects the API at `http://localhost:5000`.
 
 ## Available npm Scripts
 
