@@ -18,17 +18,17 @@ function AssetList() {
     fetchAssets();
   }, []);
 
-  // --- DELETE LOGIC ---
+  
   const handleDelete = async (id: number) => {
-    // 1. Ask for confirmation
+    
     if (!window.confirm("Are you sure you want to delete this item?")) return;
 
-    // 2. Send Delete Request
+    
     await fetch(`http://localhost:5000/api/assets/${id}`, {
       method: 'DELETE',
     });
 
-    // 3. Refresh the list
+    
     fetchAssets();
   };
 

@@ -1,4 +1,4 @@
-// server/src/index.ts
+
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// 1. GET: List all assets
+
 app.get('/api/assets', async (_req, res) => {
   try {
     const allAssets = await db.select().from(assets);
@@ -34,7 +34,7 @@ app.get('/api/assets', async (_req, res) => {
   }
 });
 
-// 2. GET: Single Asset (for Edit page)
+
 app.get('/api/assets/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -46,7 +46,6 @@ app.get('/api/assets/:id', async (req, res) => {
   }
 });
 
-// 3. POST: Create new asset
 app.post('/api/assets', async (req, res) => {
   try {
     const { itemType, serialNumber, status, purchaseDate } = req.body;
@@ -63,13 +62,12 @@ app.post('/api/assets', async (req, res) => {
   }
 });
 
-// 4. PUT: Update existing asset
 app.put('/api/assets/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { itemType, serialNumber, status, purchaseDate } = req.body;
 
-    // We force Number(id) to ensure it matches the database type
+   
     const updated = await db.update(assets)
       .set({ itemType, serialNumber, status, purchaseDate })
       .where(eq(assets.id, Number(id)))
@@ -82,7 +80,7 @@ app.put('/api/assets/:id', async (req, res) => {
   }
 });
 
-// 5. DELETE: Remove asset
+
 app.delete('/api/assets/:id', async (req, res) => {
   try {
     const { id } = req.params;
